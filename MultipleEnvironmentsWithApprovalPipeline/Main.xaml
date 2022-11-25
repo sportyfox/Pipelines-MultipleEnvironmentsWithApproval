@@ -16,13 +16,14 @@
     <x:Property Name="SecondDestinationFolder" Type="InArgument(x:String)" />
     <x:Property Name="FirstDestinationOrchUrl" Type="InArgument(x:String)" />
     <x:Property Name="SecondDestinationOrchUrl" Type="InArgument(x:String)" />
-    <x:Property Name="analyzePolicy" Type="InArgument(upa:AnalyzePolicy)" />
+    <x:Property Name="AnalyzePolicy" Type="InArgument(upa:AnalyzePolicy)" />
+    <x:Property Name="CommitterUsername" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Main.analyzePolicy>
+  <this:Main.AnalyzePolicy>
     <InArgument x:TypeArguments="upa:AnalyzePolicy" />
-  </this:Main.analyzePolicy>
+  </this:Main.AnalyzePolicy>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1471,4216</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1855,3934</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -117,7 +118,7 @@
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="524,4151" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="524,3869" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="packageVersion" />
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
@@ -132,10 +133,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="482,90" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="482,667" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -191,6 +192,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
+      <ui:LogMessage DisplayName="Log committer name" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info">
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">"CommitterUsername: " + CommitterUsername</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
     </Sequence>
     <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="482,61" sap2010:WorkflowViewState.IdRef="Stage_8" KeyId="02e02adb-539e-4a74-8085-c6216dcdb361">
       <upa:Stage.ActivityDelegate>
@@ -237,7 +251,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="482,949" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="482,90" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="projectVersionKey" />
         <Variable x:TypeArguments="x:String" Name="projectNameKey" />
@@ -246,7 +260,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -385,7 +399,7 @@
             <upa:Analyze ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="358,232" sap2010:WorkflowViewState.IdRef="Analyze_2">
               <upa:Analyze.AnalyzePolicy>
                 <InArgument x:TypeArguments="upa:AnalyzePolicy">
-                  <CSharpValue x:TypeArguments="upa:AnalyzePolicy" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">analyzePolicy</CSharpValue>
+                  <CSharpValue x:TypeArguments="upa:AnalyzePolicy" sap2010:WorkflowViewState.IdRef="CSharpValue`1_154">AnalyzePolicy</CSharpValue>
                 </InArgument>
               </upa:Analyze.AnalyzePolicy>
               <upa:Analyze.ProjectPath>
@@ -438,7 +452,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <upa:Build ContinueOnError="{x:Null}" IncludeSources="{x:Null}" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="358,479" sap2010:WorkflowViewState.IdRef="Build_1">
+            <upa:Build ContinueOnError="{x:Null}" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="358,479" sap2010:WorkflowViewState.IdRef="Build_1" IncludeSources="False">
               <upa:Build.PackagePath>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">buildOutput</CSharpReference>
