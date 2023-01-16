@@ -460,12 +460,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <upa:Build ContinueOnError="{x:Null}" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="358,489" sap2010:WorkflowViewState.IdRef="Build_1" IncludeSources="False">
-              <upa:Build.Author>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">CommitterUsername</CSharpValue>
-                </InArgument>
-              </upa:Build.Author>
+            <upa:Build Author="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="358,489" sap2010:WorkflowViewState.IdRef="Build_1" IncludeSources="False">
               <upa:Build.PackagePath>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">buildOutput</CSharpReference>
