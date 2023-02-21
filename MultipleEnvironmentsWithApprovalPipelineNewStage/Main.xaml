@@ -27,7 +27,7 @@
     <InArgument x:TypeArguments="upa:AnalyzePolicy" />
   </this:Main.AnalyzePolicy>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1937,2577</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1297,2577</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -478,7 +478,7 @@
                           <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="358,92" sap2010:WorkflowViewState.IdRef="LogMessage_47">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
-                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_230" xml:space="preserve">CurrentRow[0] + " | "  + CurrentRow["ErrorCode"]</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_231" xml:space="preserve">CurrentRow[0] + " | "  + CurrentRow["ErrorCode"]+ " | "  + CurrentRow["RuleName"]+ " | "  + CurrentRow["WorkflowDisplayName"]+ " | "  + CurrentRow["ActivityDisplayName"]+ " | "  + CurrentRow["FilePath"]+ " | "  + CurrentRow["ActivityIdRef"]+ " | "  + CurrentRow["AnalyzerItemName"]+ " | "  + CurrentRow["AnalyzerItemType"]+ " | "  + CurrentRow["Recommendation"]+ " | "  + CurrentRow["DocumentationLink"]</CSharpValue>
                               </InArgument>
                             </ui:LogMessage.Message>
                           </ui:LogMessage>
