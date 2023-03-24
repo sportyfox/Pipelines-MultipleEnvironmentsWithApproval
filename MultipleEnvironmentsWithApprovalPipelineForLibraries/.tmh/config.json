@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://alpha.uipath.com/redfoxalpha/DefaultTenant/testmanager_",
+  "defaultProject": {
+    "id": "99c85478-8171-0000-ca2d-0b44f6567fb2",
+    "name": "test1",
+    "key": "TST"
+  }
+}
