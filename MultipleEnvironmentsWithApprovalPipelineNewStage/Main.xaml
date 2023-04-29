@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.SkipValidation="False" this:Main.SkipTesting="False" this:Main.IsLibrary="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upa="clr-namespace:UiPath.Pipelines.Activities;assembly=UiPath.Pipelines.Activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:upamt="clr-namespace:UiPath.Persistence.Activities.Model.Task;assembly=UiPath.Persistence.Activities" xmlns:upat="clr-namespace:UiPath.Persistence.Activities.Tasks;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.ProjectPath="project.json" this:Main.SkipValidation="False" this:Main.SkipTesting="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upa="clr-namespace:UiPath.Pipelines.Activities;assembly=UiPath.Pipelines.Activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:upamt="clr-namespace:UiPath.Persistence.Activities.Model.Task;assembly=UiPath.Persistence.Activities" xmlns:upat="clr-namespace:UiPath.Persistence.Activities.Tasks;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="ProcessName" Type="InArgument(x:String)" />
     <x:Property Name="BuildNumber" Type="InArgument(x:String)" />
@@ -21,13 +21,9 @@
     <x:Property Name="TestFolder" Type="InArgument(x:String)" />
     <x:Property Name="SkipValidation" Type="InArgument(x:Boolean)" />
     <x:Property Name="SkipTesting" Type="InArgument(x:Boolean)" />
-    <x:Property Name="IsLibrary" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <this:Main.AnalyzePolicy>
-    <InArgument x:TypeArguments="upa:AnalyzePolicy" />
-  </this:Main.AnalyzePolicy>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>956,5353</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>852,5180</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -127,32 +123,49 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="648,5288" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="698,5115" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="packageVersion" />
-      <Variable x:TypeArguments="x:String" Name="repositoryPath" />
-      <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
+      <Variable x:TypeArguments="x:String" Name="repositoryPath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\_Work\UiPath Studio projects\red-automations\Acme.ReusableComponents.SAP</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\_Work\UiPath Studio projects\red-automations\Acme.ReusableComponents.SAP\project.json</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="buildOutput" />
       <Variable x:TypeArguments="x:String" Name="downloadedPackagePath" />
       <Variable x:TypeArguments="x:String" Name="packageName" />
       <Variable x:TypeArguments="x:String" Name="approvalReason" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dTable" />
+      <Variable x:TypeArguments="x:String" Name="packagePath" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="IsLibrary" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="636,731" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log project path" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info">
+      <ui:LogMessage DisplayName="Log project path" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">"ProjectPath: " + ProjectPath</CSharpValue>
@@ -165,7 +178,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:LogMessage DisplayName="Log repository url" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info">
+      <ui:LogMessage DisplayName="Log repository url" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">"RepositoryUrl: " + RepositoryUrl</CSharpValue>
@@ -178,7 +191,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:LogMessage DisplayName="Log build number" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info">
+      <ui:LogMessage DisplayName="Log build number" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">"BuildNumber: " + BuildNumber</CSharpValue>
@@ -218,61 +231,99 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_1">
+    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="636,701" sap2010:WorkflowViewState.IdRef="Stage_1">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,442" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <Sequence sap:VirtualizedContainerService.HintSize="528,632" sap2010:WorkflowViewState.IdRef="Sequence_53">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Cloning" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Trace">
+            <ui:LogMessage DisplayName="Log Cloning" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_252">"Cloning " + RepositoryUrl</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <upa:Clone AccessToken="{x:Null}" CommitSha="{x:Null}" ContinueOnError="{x:Null}" DestinationPath="{x:Null}" DisplayName="Clone source code" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Clone_2" TimeoutMS="60000">
-              <upa:Clone.RepoUrl>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_253">RepositoryUrl</CSharpValue>
-                </InArgument>
-              </upa:Clone.RepoUrl>
-              <upa:Clone.RepositoryPath>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">repositoryPath</CSharpReference>
-                </OutArgument>
-              </upa:Clone.RepositoryPath>
-            </upa:Clone>
-            <ui:LogMessage DisplayName="Log Cloned" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <upa:Clone AccessToken="{x:Null}" CommitSha="{x:Null}" ContinueOnError="{x:Null}" DestinationPath="{x:Null}" DisplayName="Clone source code" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Clone_2" TimeoutMS="60000">
+                    <upa:Clone.RepoUrl>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_253">RepositoryUrl</CSharpValue>
+                      </InArgument>
+                    </upa:Clone.RepoUrl>
+                    <upa:Clone.RepositoryPath>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">repositoryPath</CSharpReference>
+                      </OutArgument>
+                    </upa:Clone.RepositoryPath>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </upa:Clone>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:LogMessage DisplayName="Log Cloned" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_254">"Cloned " + RepositoryUrl + " to " +repositoryPath</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
           </Sequence>
         </ActivityAction>
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="636,1599" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="projectVersionKey" />
         <Variable x:TypeArguments="x:String" Name="projectNameKey" />
         <Variable x:TypeArguments="x:String" Name="projectName" />
         <Variable x:TypeArguments="x:String" Name="projectVersion" />
+        <Variable x:TypeArguments="x:String" Name="projectTypeFirstKey" />
+        <Variable x:TypeArguments="x:String" Name="projectTypeSecondKey" />
+        <Variable x:TypeArguments="x:String" Name="projectType" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -303,7 +354,7 @@
           <InArgument x:TypeArguments="x:String">projectVersion</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Set project version name" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign DisplayName="Set project name key" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">projectNameKey</CSharpReference>
@@ -311,6 +362,26 @@
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String">name</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set project type first key" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_81">projectTypeFirstKey</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">designOptions</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set project type second key" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_82">projectTypeSecondKey</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">outputType</InArgument>
         </Assign.Value>
       </Assign>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetProjectVersion" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
@@ -343,6 +414,28 @@
           <OutArgument x:TypeArguments="x:String" x:Key="out_ParameterValue">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">projectName</CSharpReference>
           </OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetProjectType" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProjectPath">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_335">projectFileAbsolutePath</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ParameterKey">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_338">projectTypeFirstKey</CSharpValue>
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ParameterValue">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_83">projectType</CSharpReference>
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SecondParameterKey">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_339">projectTypeSecondKey</CSharpValue>
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -385,17 +478,29 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">
+            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_84">IsLibrary</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_340">projectType == "Library"</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
     </Sequence>
-    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="586,209" sap2010:WorkflowViewState.IdRef="Stage_2">
+    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="636,1209" sap2010:WorkflowViewState.IdRef="Stage_2">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_54">
+          <Sequence sap:VirtualizedContainerService.HintSize="602,1140" sap2010:WorkflowViewState.IdRef="Sequence_54">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="If_9">
+            <If sap:VirtualizedContainerService.HintSize="560,1052" sap2010:WorkflowViewState.IdRef="If_9">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_255">AnalyzePolicy != null</CSharpValue>
@@ -403,12 +508,12 @@
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="526,862" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                <Sequence sap:VirtualizedContainerService.HintSize="526,902" sap2010:WorkflowViewState.IdRef="Sequence_37">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="analysisResult" />
                   </Sequence.Variables>
@@ -486,7 +591,7 @@
                       </InArgument>
                     </ui:ForEachRow.DataTable>
                   </ui:ForEachRow>
-                  <ui:LogMessage DisplayName="Log Analyzed" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info">
+                  <ui:LogMessage DisplayName="Log Analyzed" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
                         <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_262">"Analyzed project: " +ProjectPath</CSharpValue>
@@ -502,13 +607,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="400,180" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_42">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Analyzing" sap:VirtualizedContainerService.HintSize="358,92" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Trace">
+                  <ui:LogMessage DisplayName="Log Analyzing" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Trace">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
                         <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_263">"No policy provided for analysis."</CSharpValue>
@@ -534,16 +639,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="586,487" sap2010:WorkflowViewState.IdRef="Stage_3">
+    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="636,52" sap2010:WorkflowViewState.IdRef="Stage_3">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,418" sap2010:WorkflowViewState.IdRef="Sequence_55">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,238" sap2010:WorkflowViewState.IdRef="Sequence_55">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="410,330" sap2010:WorkflowViewState.IdRef="If_10">
+            <If sap:VirtualizedContainerService.HintSize="334,150" sap2010:WorkflowViewState.IdRef="If_10">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_264">SkipTesting</CSharpValue>
@@ -659,12 +764,12 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="586,562" sap2010:WorkflowViewState.IdRef="Stage_4">
+    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="636,52" sap2010:WorkflowViewState.IdRef="Stage_4">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_56">
@@ -742,12 +847,12 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="586,562" sap2010:WorkflowViewState.IdRef="Stage_5">
+    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="636,52" sap2010:WorkflowViewState.IdRef="Stage_5">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_57">
@@ -792,12 +897,12 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="586,1031" sap2010:WorkflowViewState.IdRef="Stage_10">
+    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_10">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="452,962" sap2010:WorkflowViewState.IdRef="Sequence_58">
@@ -890,15 +995,15 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="586,1098" sap2010:WorkflowViewState.IdRef="Stage_7">
+    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_7">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="552,1029" sap2010:WorkflowViewState.IdRef="Sequence_59">
+          <Sequence sap:VirtualizedContainerService.HintSize="552,1377" sap2010:WorkflowViewState.IdRef="Sequence_59">
             <Sequence.Variables>
               <Variable x:TypeArguments="upaf:FormTaskData" Name="approvalTask" />
               <Variable x:TypeArguments="scg:List(upat:TaskUserAssignment)" Name="approvalTaskAssignmentList" />
@@ -947,7 +1052,7 @@
               </upaf:CreateFormTask.TaskTitle>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -982,7 +1087,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </upat:AssignTasks>
-            <upaf:WaitForFormTaskAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait for Approval" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="WaitForFormTaskAndResume_2">
+            <upaf:WaitForFormTaskAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait for Approval" sap:VirtualizedContainerService.HintSize="510,222" sap2010:WorkflowViewState.IdRef="WaitForFormTaskAndResume_2">
               <upaf:WaitForFormTaskAndResume.TaskInput>
                 <InArgument x:TypeArguments="upaf:FormTaskData">
                   <CSharpValue x:TypeArguments="upaf:FormTaskData" sap2010:WorkflowViewState.IdRef="CSharpValue`1_301">approvalTask</CSharpValue>
@@ -1000,7 +1105,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </upaf:WaitForFormTaskAndResume>
-            <If DisplayName="Check for approval result" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="If_7">
+            <If DisplayName="Check for approval result" sap:VirtualizedContainerService.HintSize="510,230" sap2010:WorkflowViewState.IdRef="If_7">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_302">isApproved</CSharpValue>
@@ -1053,102 +1158,84 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="588,784" sap2010:WorkflowViewState.IdRef="Sequence_65">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="526,673" sap2010:WorkflowViewState.IdRef="Stage_8">
-            <upa:Stage.Activities>
-              <ActivityAction>
-                <Sequence sap:VirtualizedContainerService.HintSize="492,604" sap2010:WorkflowViewState.IdRef="Sequence_60">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="450,516" sap2010:WorkflowViewState.IdRef="Sequence_51">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Downloading package" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace">
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_305" xml:space="preserve">"Downloading package " + packageName  + " ver: " + packageVersion + " from " + FirstDestinationOrchUrl +" Folder: " + FirstDestinationFolder</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                    <upa:DownloadPackage ContinueOnError="{x:Null}" DisplayName="Download Package from the first destination" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="DownloadPackage_2" TimeoutMS="60000">
-                      <upa:DownloadPackage.FolderName>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_307">FirstDestinationFolder</CSharpValue>
-                        </InArgument>
-                      </upa:DownloadPackage.FolderName>
-                      <upa:DownloadPackage.IsLibrary>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_317">IsLibrary</CSharpValue>
-                        </InArgument>
-                      </upa:DownloadPackage.IsLibrary>
-                      <upa:DownloadPackage.OrchestratorUrl>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_309">FirstDestinationOrchUrl</CSharpValue>
-                        </InArgument>
-                      </upa:DownloadPackage.OrchestratorUrl>
-                      <upa:DownloadPackage.PackageName>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_306">packageName</CSharpValue>
-                        </InArgument>
-                      </upa:DownloadPackage.PackageName>
-                      <upa:DownloadPackage.PackagePath>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">downloadedPackagePath</CSharpReference>
-                        </OutArgument>
-                      </upa:DownloadPackage.PackagePath>
-                      <upa:DownloadPackage.PackageVersion>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_308">packageVersion</CSharpValue>
-                        </InArgument>
-                      </upa:DownloadPackage.PackageVersion>
-                    </upa:DownloadPackage>
-                    <ui:LogMessage DisplayName="Log Downloaded package" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Info">
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_310" xml:space="preserve">"Downloaded package " + packageName  + " ver: " + packageVersion + " from " + FirstDestinationOrchUrl +" Folder: " + FirstDestinationFolder</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                  </Sequence>
-                </Sequence>
-              </ActivityAction>
-            </upa:Stage.Activities>
+    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_11">
+      <upa:Stage.Activities>
+        <ActivityAction>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_66">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </upa:Stage>
-        </Sequence>
-      </ui:CommentOut.Body>
+            <ui:LogMessage DisplayName="Download package from the first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Trace">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_326">"Downloading package " +packageName + " from "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <upa:DownloadPackage ContinueOnError="{x:Null}" DisplayName="Download Package" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="DownloadPackage_1" IsLibrary="False" TimeoutMS="60000">
+              <upa:DownloadPackage.FolderName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_328">FirstDestinationFolder</CSharpValue>
+                </InArgument>
+              </upa:DownloadPackage.FolderName>
+              <upa:DownloadPackage.OrchestratorUrl>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_330">FirstDestinationOrchUrl</CSharpValue>
+                </InArgument>
+              </upa:DownloadPackage.OrchestratorUrl>
+              <upa:DownloadPackage.PackageName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_327">packageName</CSharpValue>
+                </InArgument>
+              </upa:DownloadPackage.PackageName>
+              <upa:DownloadPackage.PackagePath>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_78">packagePath</CSharpReference>
+                </OutArgument>
+              </upa:DownloadPackage.PackagePath>
+              <upa:DownloadPackage.PackageVersion>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_329">packageVersion</CSharpValue>
+                </InArgument>
+              </upa:DownloadPackage.PackageVersion>
+            </upa:DownloadPackage>
+            <ui:LogMessage DisplayName="Downloaded package from the firstdestination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Trace">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_331">"Downloaded package " +packageName + " from "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="586,562" sap2010:WorkflowViewState.IdRef="Stage_9">
+    </upa:Stage>
+    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_9">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_61">
@@ -1157,10 +1244,10 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_71" Level="Trace">
+            <ui:LogMessage DisplayName="Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_71" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_320">"Publishing package " +buildOutput + " to "+ SecondDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_332">"Publishing package " +packageName + " to "+ SecondDestinationOrchUrl + " folder: " + SecondDestinationFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1183,14 +1270,14 @@
               </upa:PublishPackage.OrchestratorUrl>
               <upa:PublishPackage.PackagePath>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_319">buildOutput</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_333">packagePath</CSharpValue>
                 </InArgument>
               </upa:PublishPackage.PackagePath>
             </upa:PublishPackage>
             <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_72" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_321">"Published package " +buildOutput + " to "+ SecondDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_334">"Published package " +packagePath + " to "+ SecondDestinationOrchUrl + " folder: " + SecondDestinationFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1205,8 +1292,8 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>

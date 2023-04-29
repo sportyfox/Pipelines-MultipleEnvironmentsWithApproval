@@ -1,19 +1,24 @@
 {
-  "name": "MultipleEnvironmentsWithApprovalPipelineNewStage",
-  "description": "Multiple Environments With Approval Pipeline New Stage",
+  "name": "MultipleEnvironmentsWithApprovalPipeline_VB",
+  "description": "MultipleEnvironmentsWithApprovalPipeline_VB",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.FormActivityLibrary": "[2.0.2]",
-    "UiPath.Persistence.Activities": "[1.4.1]",
-    "UiPath.Pipelines.Activities": "[1.0.3-dev.231170739]",
-    "UiPath.System.Activities": "[22.10.0]",
-    "UiPath.WebAPI.Activities": "[1.11.1]"
+    "UiPath.Excel.Activities": "[2.20.0-preview]",
+    "UiPath.Form.Activities": "[23.4.3]",
+    "UiPath.FormActivityLibrary": "[2.0.5]",
+    "UiPath.Mail.Activities": "[1.18.2]",
+    "UiPath.Persistence.Activities": "[1.4.4]",
+    "UiPath.Pipelines.Activities": "[1.0.4-alpha.3759114]",
+    "UiPath.System.Activities": "[23.4.1-preview]",
+    "UiPath.Testing.Activities": "[23.4.0-preview]",
+    "UiPath.UIAutomation.Activities": "[23.4.1-preview]",
+    "UiPath.WebAPI.Activities": "[1.16.2]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "22.10.0.0",
-  "projectVersion": "1.0.52",
+  "studioVersion": "23.4.0.0",
+  "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,11 +50,11 @@
     "fileInfoCollection": [],
     "modernBehavior": true
   },
-  "expressionLanguage": "CSharp",
+  "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "ecd91ba6-14b5-4514-9e0f-cdd64e6b76f8",
+      "uniqueId": "19b8f217-266b-44f7-9503-37c6a3908b29",
       "input": [],
       "output": []
     }
@@ -57,6 +62,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Windows",
-  "automationHubIdeaUrl": "https://alpha.uipath.com/redfoxalpha/DefaultTenant/automationhub_/automation-profile/onboarding-of-new-employee"
+  "targetFramework": "Windows"
 }
