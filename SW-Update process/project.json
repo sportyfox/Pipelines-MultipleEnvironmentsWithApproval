@@ -1,9 +1,9 @@
-﻿{
+{
   "name": "Update process from code",
   "description": "This Pipeline clones the code, analyzes it, creates the package, uploads the package and update the process to the newer version of the package. Read more in Automation Ops - Pipelines.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Pipelines.Activities": "1.0.1-preview",
+    "UiPath.Pipelines.Activities": "1.0.4-alpha.3827747",
     "UiPath.System.Activities": "23.4.1-preview",
     "UiPath.WebAPI.Activities": "1.13.2"
   },
@@ -11,14 +11,15 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.2.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
     "requiresUserInteraction": false,
-    "supportsPersistence": false,
+    "supportsPersistence": true,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -43,6 +44,14 @@
     "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "dc8760a5-8175-4ebe-9af2-a3308f8b55d8",
+      "input": [],
+      "output": []
+    }
+  ],
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},

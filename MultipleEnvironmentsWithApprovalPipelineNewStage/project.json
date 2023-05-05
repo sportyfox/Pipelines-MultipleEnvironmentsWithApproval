@@ -5,7 +5,7 @@
   "dependencies": {
     "UiPath.FormActivityLibrary": "[2.0.2]",
     "UiPath.Persistence.Activities": "[1.4.1]",
-    "UiPath.Pipelines.Activities": "[1.0.4-alpha.3824541]",
+    "UiPath.Pipelines.Activities": "[1.0.4-alpha.3827747]",
     "UiPath.System.Activities": "[22.10.0]",
     "UiPath.UIAutomation.Activities": "[23.4.4]",
     "UiPath.WebAPI.Activities": "[1.11.1]"
@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.0.0",
-  "projectVersion": "1.0.53",
+  "projectVersion": "1.0.62",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
