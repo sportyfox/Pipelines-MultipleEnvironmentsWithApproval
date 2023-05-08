@@ -1,6 +1,6 @@
 {
   "name": "Copy package between environments",
-  "description": "Download package - Upload package.\r\nRead more in Automation Ops - Pipelines. documention.",
+  "description": "Download package - Publish package.\r\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Pipelines.Activities": "1.0.5-preview",
