@@ -23,11 +23,12 @@
       </x:Property.Attributes>
     </x:Property>
     <x:Property Name="TestingFolder" Type="InArgument(x:String)" />
+    <x:Property Name="HaveSamePackageFeed" Type="InArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,3330</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>562,3691</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -134,7 +135,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="572,3265" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="572,3626" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
       <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
@@ -769,39 +770,60 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="510,498" sap2010:WorkflowViewState.IdRef="Stage_9">
+    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="510,859" sap2010:WorkflowViewState.IdRef="Stage_9">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,413" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence sap:VirtualizedContainerService.HintSize="452,774" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Publishing package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
-            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to second destination " FolderName="[SecondOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_3" OrchestratorUrl="[SecondOrchestratorUrl]" PackagePath="[downloadedPackagePath]" TimeoutMS="60000">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </upa:PublishPackage>
-            <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Published package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
+            <If Condition="[HaveSamePackageFeed]" sap:VirtualizedContainerService.HintSize="410,686" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Not publishing on second destination since it is the same package feed. HaveSamePackageFeed: &quot; + HaveSamePackageFeed.ToString]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="324,324" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Publishing to second destination" sap:VirtualizedContainerService.HintSize="282,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Publishing package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to second destination " FolderName="[SecondOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="282,52" sap2010:WorkflowViewState.IdRef="PublishPackage_3" OrchestratorUrl="[SecondOrchestratorUrl]" PackagePath="[downloadedPackagePath]" TimeoutMS="60000">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </upa:PublishPackage>
+                  <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="282,52" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Published package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </upa:Stage.Activities>
