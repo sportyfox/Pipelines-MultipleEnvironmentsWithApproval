@@ -1,6 +1,6 @@
 {
   "name": "Build and publish",
-  "description": "Clone - Analyze -  Build - Publish\r\nRead more in Automation Ops - Pipelines. documention.",
+  "description": "Clone - Analyze - Build - Publish\r\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Pipelines.Activities": "1.0.4-alpha.3827747",
