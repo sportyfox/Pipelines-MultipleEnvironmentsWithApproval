@@ -1,6 +1,6 @@
 {
   "name": "Update process from code",
-  "description": "This Pipeline clones the code, analyzes it, creates the package, uploads the package and update the process (if is not library) to the newer version of the package. To run tests, set SkipTesting to False. Read more in Automation Ops - Pipelines. documention.",
+  "description": "Clone - Analyze -  Build - Publish - Update process\r\nIf it is a library, the update process part will be skipped.\r\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Pipelines.Activities": "1.0.4-alpha.3827747",
