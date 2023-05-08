@@ -1,5 +1,5 @@
 {
-  "name": "Move package between environments",
+  "name": "Copy package between environments",
   "description": "Download package - Upload package.\r\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
   "dependencies": {
