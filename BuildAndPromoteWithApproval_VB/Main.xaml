@@ -6,15 +6,15 @@
     <x:Property Name="RepositoryUrl" Type="InArgument(x:String)" />
     <x:Property Name="ProjectPath" Type="InArgument(x:String)" />
     <x:Property Name="Approver" Type="InArgument(x:String)" />
-    <x:Property Name="FirstDestinationFolder" Type="InArgument(x:String)" />
-    <x:Property Name="SecondDestinationFolder" Type="InArgument(x:String)" />
-    <x:Property Name="FirstDestinationOrchUrl" Type="InArgument(x:String)" />
-    <x:Property Name="SecondDestinationOrchUrl" Type="InArgument(x:String)" />
     <x:Property Name="CommitterUsername" Type="InArgument(x:String)" />
     <x:Property Name="SkipTesting" Type="OutArgument(x:Boolean)" />
     <x:Property Name="TestFolder" Type="InArgument(x:String)" />
     <x:Property Name="AnalyzePolicy" Type="InArgument(upa:AnalyzePolicy)" />
     <x:Property Name="SkipValidation" Type="InArgument(x:Boolean)" />
+    <x:Property Name="FirstOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="FirstOrchestratorUrl" Type="InArgument(x:String)" />
+    <x:Property Name="SecondOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="SecondOrchestratorUrl" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -464,9 +464,9 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log run tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Running tests from: &quot; +ProjectPath + &quot; on &quot; + FirstDestinationOrchUrl + &quot;, test folder: &quot;+ TestFolder]" />
-                  <upa:RunTests Author="{x:Null}" ContinueOnError="{x:Null}" Version="{x:Null}" DisplayName="Run Tests" FolderName="[TestFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="RunTests_1" OrchestratorUrl="[FirstDestinationOrchUrl]" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" ResultFilePath="[testResultFilePath]" SkipValidate="[SkipValidation]" />
-                  <ui:LogMessage DisplayName="Log ran tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Tests from project&quot; +ProjectPath + &quot; have been executed on &quot; + FirstDestinationOrchUrl + &quot;, test folder: &quot;+ TestFolder + &quot;. Results can be found here:: &quot; + testResultFilePath]" />
+                  <ui:LogMessage DisplayName="Log run tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Running tests from: &quot; +ProjectPath + &quot; on &quot; + FirstOrchestratorUrl + &quot;, test folder: &quot;+ TestFolder]" />
+                  <upa:RunTests Author="{x:Null}" ContinueOnError="{x:Null}" Version="{x:Null}" DisplayName="Run Tests" FolderName="[TestFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="RunTests_1" OrchestratorUrl="[FirstOrchestratorUrl]" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" ResultFilePath="[testResultFilePath]" SkipValidate="[SkipValidation]" />
+                  <ui:LogMessage DisplayName="Log ran tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Tests from project&quot; +ProjectPath + &quot; have been executed on &quot; + FirstOrchestratorUrl + &quot;, test folder: &quot;+ TestFolder + &quot;. Results can be found here:: &quot; + testResultFilePath]" />
                 </Sequence>
               </If.Else>
             </If>
@@ -525,9 +525,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Publishing to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Publishing package &quot; +buildOutput + &quot; to &quot;+ FirstDestinationOrchUrl + &quot; folder: &quot; + FirstDestinationFolder]" />
-            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to the first destination" FolderName="[FirstDestinationFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_1" OrchestratorUrl="[FirstDestinationOrchUrl]" PackagePath="[buildOutput]" TimeoutMS="60000" />
-            <ui:LogMessage DisplayName="Log Published to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Published package &quot; +buildOutput + &quot; to &quot;+ FirstDestinationOrchUrl + &quot; folder: &quot; + FirstDestinationFolder]" />
+            <ui:LogMessage DisplayName="Log Publishing to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Publishing package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
+            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to the first destination" FolderName="[FirstOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_1" OrchestratorUrl="[FirstOrchestratorUrl]" PackagePath="[buildOutput]" TimeoutMS="60000" />
+            <ui:LogMessage DisplayName="Log Published to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Published package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
           </Sequence>
         </ActivityAction>
       </upa:Stage.Activities>
@@ -571,9 +571,9 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log updating to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Updating process &quot; + ProcessName + &quot; in Orch: &quot; + FirstDestinationOrchUrl + &quot; and Folder: &quot; + FirstDestinationFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
-                  <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the first destination" FolderName="[FirstDestinationFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_1" OrchestratorUrl="[FirstDestinationOrchUrl]" PackageName="[packageName]" PackageVersion="[packageVersion]" ProcessName="[ProcessName]" TimeoutMS="60000" />
-                  <ui:LogMessage DisplayName="Log updated on the first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Updated process &quot; + ProcessName + &quot; in Orch: &quot; + FirstDestinationOrchUrl + &quot; and Folder: &quot; + FirstDestinationFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]">
+                  <ui:LogMessage DisplayName="Log updating to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Updating process &quot; + ProcessName + &quot; in Orch: &quot; + FirstOrchestratorUrl + &quot; and Folder: &quot; + FirstOrchestratorFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
+                  <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the first destination" FolderName="[FirstOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_1" OrchestratorUrl="[FirstOrchestratorUrl]" PackageName="[packageName]" PackageVersion="[packageVersion]" ProcessName="[ProcessName]" TimeoutMS="60000" />
+                  <ui:LogMessage DisplayName="Log updated on the first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Updated process &quot; + ProcessName + &quot; in Orch: &quot; + FirstOrchestratorUrl + &quot; and Folder: &quot; + FirstOrchestratorFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -681,9 +681,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Downloading package" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[&quot;Downloading package &quot; + packageName  + &quot; ver: &quot; + packageVersion + &quot; from &quot; + FirstDestinationOrchUrl +&quot; Folder: &quot; + FirstDestinationFolder]" />
-            <upa:DownloadPackage ContinueOnError="{x:Null}" DisplayName="Download Package from the first destination" FolderName="[FirstDestinationFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="DownloadPackage_1" IsLibrary="[isLibrary]" OrchestratorUrl="[FirstDestinationOrchUrl]" PackageName="[packageName]" PackagePath="[downloadedPackagePath]" PackageVersion="[packageVersion]" TimeoutMS="60000" />
-            <ui:LogMessage DisplayName="Log Downloaded package" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Downloaded package &quot; + packageName  + &quot; ver: &quot; + packageVersion + &quot; from &quot; + FirstDestinationOrchUrl +&quot; Folder: &quot; + FirstDestinationFolder]" />
+            <ui:LogMessage DisplayName="Log Downloading package" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[&quot;Downloading package &quot; + packageName  + &quot; ver: &quot; + packageVersion + &quot; from &quot; + FirstOrchestratorUrl +&quot; Folder: &quot; + FirstOrchestratorFolder]" />
+            <upa:DownloadPackage ContinueOnError="{x:Null}" DisplayName="Download Package from the first destination" FolderName="[FirstOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="DownloadPackage_1" IsLibrary="[isLibrary]" OrchestratorUrl="[FirstOrchestratorUrl]" PackageName="[packageName]" PackagePath="[downloadedPackagePath]" PackageVersion="[packageVersion]" TimeoutMS="60000" />
+            <ui:LogMessage DisplayName="Log Downloaded package" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Downloaded package &quot; + packageName  + &quot; ver: &quot; + packageVersion + &quot; from &quot; + FirstOrchestratorUrl +&quot; Folder: &quot; + FirstOrchestratorFolder]" />
           </Sequence>
         </ActivityAction>
       </upa:Stage.Activities>
@@ -703,7 +703,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Publishing package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondDestinationOrchUrl + &quot; folder: &quot; + FirstDestinationFolder]">
+            <ui:LogMessage DisplayName="Log Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Publishing package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -711,7 +711,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to second destination " FolderName="[SecondDestinationFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_3" OrchestratorUrl="[SecondDestinationOrchUrl]" PackagePath="[downloadedPackagePath]" TimeoutMS="60000">
+            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to second destination " FolderName="[SecondOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_3" OrchestratorUrl="[SecondOrchestratorUrl]" PackagePath="[downloadedPackagePath]" TimeoutMS="60000">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -719,7 +719,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </upa:PublishPackage>
-            <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Published package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondDestinationOrchUrl + &quot; folder: &quot; + FirstDestinationFolder]">
+            <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Published package &quot; +downloadedPackagePath + &quot; to &quot;+ SecondOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -764,9 +764,9 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log updating process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Trace" Message="[&quot;Updating process &quot; + ProcessName + &quot; in Orch: &quot; + SecondDestinationOrchUrl + &quot; and Folder: &quot; + SecondDestinationFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
-                  <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the second destination" FolderName="[SecondDestinationFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_2" OrchestratorUrl="[SecondDestinationOrchUrl]" PackageName="[packageName]" PackageVersion="[packageVersion]" ProcessName="[ProcessName]" TimeoutMS="60000" />
-                  <ui:LogMessage DisplayName="Log updated process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Updated process &quot; + ProcessName + &quot; in Orch: &quot; + SecondDestinationOrchUrl + &quot; and Folder: &quot; + SecondDestinationFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
+                  <ui:LogMessage DisplayName="Log updating process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Trace" Message="[&quot;Updating process &quot; + ProcessName + &quot; in Orch: &quot; + SecondOrchestratorUrl + &quot; and Folder: &quot; + SecondOrchestratorFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
+                  <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the second destination" FolderName="[SecondOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_2" OrchestratorUrl="[SecondOrchestratorUrl]" PackageName="[packageName]" PackageVersion="[packageVersion]" ProcessName="[ProcessName]" TimeoutMS="60000" />
+                  <ui:LogMessage DisplayName="Log updated process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Updated process &quot; + ProcessName + &quot; in Orch: &quot; + SecondOrchestratorUrl + &quot; and Folder: &quot; + SecondOrchestratorFolder + &quot; to use package: &quot; + packageName + &quot; ver: &quot; + packageVersion]" />
                 </Sequence>
               </If.Else>
             </If>
