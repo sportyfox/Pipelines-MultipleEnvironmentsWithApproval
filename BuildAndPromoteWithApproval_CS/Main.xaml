@@ -12,18 +12,18 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </x:Property>
-    <x:Property Name="FirstDestinationFolder" Type="InArgument(x:String)" />
-    <x:Property Name="SecondDestinationFolder" Type="InArgument(x:String)" />
-    <x:Property Name="FirstDestinationOrchUrl" Type="InArgument(x:String)" />
-    <x:Property Name="SecondDestinationOrchUrl" Type="InArgument(x:String)" />
     <x:Property Name="AnalyzePolicy" Type="InArgument(upa:AnalyzePolicy)" />
     <x:Property Name="CommitterUsername" Type="InArgument(x:String)" />
     <x:Property Name="TestFolder" Type="InArgument(x:String)" />
     <x:Property Name="SkipValidation" Type="InArgument(x:Boolean)" />
     <x:Property Name="SkipTesting" Type="InArgument(x:Boolean)" />
+    <x:Property Name="FirstOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="SecondOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="FirstOrchestratorUrl" Type="InArgument(x:String)" />
+    <x:Property Name="SecondOrchestratorUrl" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1600,3291</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,3291</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -670,7 +670,7 @@
                   <ui:LogMessage DisplayName="Log run tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Trace">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_266">"Running tests from: " +ProjectPath + " on " + FirstDestinationOrchUrl + ", test folder: "+ TestFolder</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_266">"Running tests from: " +ProjectPath + " on " + FirstOrchestratorUrl + ", test folder: "+ TestFolder</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                     <sap:WorkflowViewStateService.ViewState>
@@ -688,7 +688,7 @@
                     </upa:RunTests.FolderName>
                     <upa:RunTests.OrchestratorUrl>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_267">FirstDestinationOrchUrl</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_267">FirstOrchestratorUrl</CSharpValue>
                       </InArgument>
                     </upa:RunTests.OrchestratorUrl>
                     <upa:RunTests.ProjectPath>
@@ -721,7 +721,7 @@
                   <ui:LogMessage DisplayName="Log ran tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="Info">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_272">"Tests from project" +ProjectPath + " have been executed on " + FirstDestinationOrchUrl + ", test folder: "+ TestFolder + ". Results can be found here:: " + testResultFilePath</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_272">"Tests from project" +ProjectPath + " have been executed on " + FirstOrchestratorUrl + ", test folder: "+ TestFolder + ". Results can be found here:: " + testResultFilePath</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                     <sap:WorkflowViewStateService.ViewState>
@@ -839,19 +839,19 @@
             <ui:LogMessage DisplayName="Log Publishing to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_64" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_280">"Publishing package " +buildOutput + " to "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_280">"Publishing package " +buildOutput + " to "+ FirstOrchestratorUrl + " folder: " + FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
             <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to the first destination" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_3" TimeoutMS="60000">
               <upa:PublishPackage.FolderName>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_282">FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_282">FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </upa:PublishPackage.FolderName>
               <upa:PublishPackage.OrchestratorUrl>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_283">FirstDestinationOrchUrl</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_283">FirstOrchestratorUrl</CSharpValue>
                 </InArgument>
               </upa:PublishPackage.OrchestratorUrl>
               <upa:PublishPackage.PackagePath>
@@ -863,7 +863,7 @@
             <ui:LogMessage DisplayName="Log Published to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_284">"Published package " +buildOutput + " to "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_284">"Published package " +buildOutput + " to "+ FirstOrchestratorUrl + " folder: " + FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
@@ -918,19 +918,19 @@
                   <ui:LogMessage DisplayName="Log updating to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Trace">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">"Updating process " + ProcessName + " in Orch: " + FirstDestinationOrchUrl + " and Folder: " + FirstDestinationFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">"Updating process " + ProcessName + " in Orch: " + FirstOrchestratorUrl + " and Folder: " + FirstOrchestratorFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
                   <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the first destination" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_2" TimeoutMS="60000">
                     <upa:UpdateProcess.FolderName>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">FirstDestinationFolder</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">FirstOrchestratorFolder</CSharpValue>
                       </InArgument>
                     </upa:UpdateProcess.FolderName>
                     <upa:UpdateProcess.OrchestratorUrl>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_290">FirstDestinationOrchUrl</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_290">FirstOrchestratorUrl</CSharpValue>
                       </InArgument>
                     </upa:UpdateProcess.OrchestratorUrl>
                     <upa:UpdateProcess.PackageName>
@@ -952,7 +952,7 @@
                   <ui:LogMessage DisplayName="Log updated on the first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_67" Level="Info">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_291">"Updated process " + ProcessName + " in Orch: " + FirstDestinationOrchUrl + " and Folder: " + FirstDestinationFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_291">"Updated process " + ProcessName + " in Orch: " + FirstOrchestratorUrl + " and Folder: " + FirstOrchestratorFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                     <sap:WorkflowViewStateService.ViewState>
@@ -1150,7 +1150,7 @@
             <ui:LogMessage DisplayName="Download package from the first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_326">"Downloading package " +packageName + " from "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_326">"Downloading package " +packageName + " from "+ FirstOrchestratorUrl + " folder: " + FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1163,7 +1163,7 @@
             <upa:DownloadPackage ContinueOnError="{x:Null}" DisplayName="Download Package" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="DownloadPackage_1" TimeoutMS="60000">
               <upa:DownloadPackage.FolderName>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_328">FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_328">FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </upa:DownloadPackage.FolderName>
               <upa:DownloadPackage.IsLibrary>
@@ -1173,7 +1173,7 @@
               </upa:DownloadPackage.IsLibrary>
               <upa:DownloadPackage.OrchestratorUrl>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_330">FirstDestinationOrchUrl</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_330">FirstOrchestratorUrl</CSharpValue>
                 </InArgument>
               </upa:DownloadPackage.OrchestratorUrl>
               <upa:DownloadPackage.PackageName>
@@ -1195,7 +1195,7 @@
             <ui:LogMessage DisplayName="Downloaded package from the firstdestination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_331">"Downloaded package " +packageName + " from "+ FirstDestinationOrchUrl + " folder: " + FirstDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_331">"Downloaded package " +packageName + " from "+ FirstOrchestratorUrl + " folder: " + FirstOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1227,7 +1227,7 @@
             <ui:LogMessage DisplayName="Publishing to second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_71" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_332">"Publishing package " +packageName + " to "+ SecondDestinationOrchUrl + " folder: " + SecondDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_332">"Publishing package " +packageName + " to "+ SecondOrchestratorUrl + " folder: " + SecondOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1240,12 +1240,12 @@
             <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to second destination " sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_4" TimeoutMS="60000">
               <upa:PublishPackage.FolderName>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_313">SecondDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_313">SecondOrchestratorFolder</CSharpValue>
                 </InArgument>
               </upa:PublishPackage.FolderName>
               <upa:PublishPackage.OrchestratorUrl>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_314">SecondDestinationOrchUrl</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_314">SecondOrchestratorUrl</CSharpValue>
                 </InArgument>
               </upa:PublishPackage.OrchestratorUrl>
               <upa:PublishPackage.PackagePath>
@@ -1257,7 +1257,7 @@
             <ui:LogMessage DisplayName="Log Published to second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_72" Level="Info">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_334">"Published package " +packagePath + " to "+ SecondDestinationOrchUrl + " folder: " + SecondDestinationFolder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_334">"Published package " +packagePath + " to "+ SecondOrchestratorUrl + " folder: " + SecondOrchestratorFolder</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
               <sap:WorkflowViewStateService.ViewState>
@@ -1318,19 +1318,19 @@
                   <ui:LogMessage DisplayName="Log updating process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Trace">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_346">"Updating process " + ProcessName + " in Orch: " + SecondDestinationOrchUrl + " and Folder: " + SecondDestinationFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_346">"Updating process " + ProcessName + " in Orch: " + SecondOrchestratorUrl + " and Folder: " + SecondOrchestratorFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
                   <upa:UpdateProcess ContinueOnError="{x:Null}" DisplayName="Update Process on the second destination" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="UpdateProcess_3" TimeoutMS="60000">
                     <upa:UpdateProcess.FolderName>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">SecondDestinationFolder</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">SecondOrchestratorFolder</CSharpValue>
                       </InArgument>
                     </upa:UpdateProcess.FolderName>
                     <upa:UpdateProcess.OrchestratorUrl>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_351">SecondDestinationOrchUrl</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_351">SecondOrchestratorUrl</CSharpValue>
                       </InArgument>
                     </upa:UpdateProcess.OrchestratorUrl>
                     <upa:UpdateProcess.PackageName>
@@ -1352,7 +1352,7 @@
                   <ui:LogMessage DisplayName="Log updated process on the second destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Trace">
                     <ui:LogMessage.Message>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_352">"Updating process " + ProcessName + " in Orch: " + SecondDestinationOrchUrl + " and Folder: " + SecondDestinationFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_352">"Updating process " + ProcessName + " in Orch: " + SecondOrchestratorUrl + " and Folder: " + SecondOrchestratorFolder + " to use package: " + packageName + " ver: " + packageVersion</CSharpValue>
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
