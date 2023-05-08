@@ -7,7 +7,7 @@
     <x:Property Name="ProjectPath" Type="InArgument(x:String)" />
     <x:Property Name="Approver" Type="InArgument(x:String)" />
     <x:Property Name="CommitterUsername" Type="InArgument(x:String)" />
-    <x:Property Name="SkipTesting" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SkipTesting" Type="InArgument(x:Boolean)" />
     <x:Property Name="TestFolder" Type="InArgument(x:String)" />
     <x:Property Name="AnalyzePolicy" Type="InArgument(upa:AnalyzePolicy)" />
     <x:Property Name="SkipValidation" Type="InArgument(x:Boolean)" />
@@ -19,7 +19,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1012,1781</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,2376</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="548,1716" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="548,2311" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
       <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
@@ -371,16 +371,16 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="486,535" sap2010:WorkflowViewState.IdRef="Stage_3">
+    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_3">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,450" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap:VirtualizedContainerService.HintSize="602,1172" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[AnalyzePolicy IsNot Nothing]" sap:VirtualizedContainerService.HintSize="410,362" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[AnalyzePolicy IsNot Nothing]" sap:VirtualizedContainerService.HintSize="560,1084" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="526,902" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <Sequence.Variables>
@@ -429,21 +429,21 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_4">
+    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="486,1130" sap2010:WorkflowViewState.IdRef="Stage_4">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="452,1045" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[SkipTesting]" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[SkipTesting]" sap:VirtualizedContainerService.HintSize="410,957" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
@@ -455,7 +455,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,544" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,595" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="testResultFilePath" />
                   </Sequence.Variables>
@@ -465,7 +465,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log run tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Running tests from: &quot; +ProjectPath + &quot; on &quot; + FirstOrchestratorUrl + &quot;, test folder: &quot;+ TestFolder]" />
-                  <upa:RunTests Author="{x:Null}" ContinueOnError="{x:Null}" Version="{x:Null}" DisplayName="Run Tests" FolderName="[TestFolder]" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="RunTests_1" OrchestratorUrl="[FirstOrchestratorUrl]" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" ResultFilePath="[testResultFilePath]" SkipValidate="[SkipValidation]" />
+                  <upa:RunTests Author="{x:Null}" ContinueOnError="{x:Null}" Version="{x:Null}" DisplayName="Run Tests" FolderName="[TestFolder]" sap:VirtualizedContainerService.HintSize="334,243" sap2010:WorkflowViewState.IdRef="RunTests_1" OrchestratorUrl="[FirstOrchestratorUrl]" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" ResultFilePath="[testResultFilePath]" SkipValidate="[SkipValidation]" />
                   <ui:LogMessage DisplayName="Log ran tests" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Tests from project&quot; +ProjectPath + &quot; have been executed on &quot; + FirstOrchestratorUrl + &quot;, test folder: &quot;+ TestFolder + &quot;. Results can be found here:: &quot; + testResultFilePath]" />
                 </Sequence>
               </If.Else>
@@ -475,7 +475,7 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -541,13 +541,13 @@
     <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_6">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,994" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[isLibrary]" sap:VirtualizedContainerService.HintSize="410,906" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[isLibrary]" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -594,7 +594,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_7">
+    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_7">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="544,1725" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -672,7 +672,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_8">
+    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_8">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -694,7 +694,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_9">
+    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_9">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,413" sap2010:WorkflowViewState.IdRef="Sequence_13">
@@ -737,16 +737,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_10">
+    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Stage_10">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,450" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[isLibrary]" sap:VirtualizedContainerService.HintSize="410,362" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[isLibrary]" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
