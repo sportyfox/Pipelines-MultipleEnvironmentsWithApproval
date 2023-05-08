@@ -16,12 +16,12 @@
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="SecondOrchestratorFolder" Type="InArgument(x:String)">
+    <x:Property Name="SecondOrchestratorFolder" Type="InArgument(x:String)" />
+    <x:Property Name="SecondOrchestratorUrl" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="SecondOrchestratorUrl" Type="InArgument(x:String)" />
     <x:Property Name="TestingFolder" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
