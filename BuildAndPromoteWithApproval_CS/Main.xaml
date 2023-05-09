@@ -23,7 +23,7 @@
     <x:Property Name="SecondOrchestratorUrl" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1012,2360</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,1824</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -132,7 +132,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="648,2295" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateProcessWithApproval" sap:VirtualizedContainerService.HintSize="512,1759" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="packageVersion" />
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
@@ -150,7 +150,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -223,7 +223,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_1">
+    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_1">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,442" sap2010:WorkflowViewState.IdRef="Sequence_53">
@@ -286,7 +286,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="projectVersionKey" />
         <Variable x:TypeArguments="x:String" Name="projectNameKey" />
@@ -466,16 +466,16 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_2">
+    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_2">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="602,1172" sap2010:WorkflowViewState.IdRef="Sequence_54">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_54">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="560,1084" sap2010:WorkflowViewState.IdRef="If_9">
+            <If sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_9">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_255">AnalyzePolicy != null</CSharpValue>
@@ -614,7 +614,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_3">
+    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_3">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_55">
@@ -744,7 +744,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_4">
+    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_4">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_56">
@@ -827,7 +827,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_5">
+    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_5">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_57">
@@ -877,7 +877,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_10">
+    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_10">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_58">
@@ -975,7 +975,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="586,1114" sap2010:WorkflowViewState.IdRef="Stage_7">
+    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_7">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="552,1029" sap2010:WorkflowViewState.IdRef="Sequence_59">
@@ -1136,12 +1136,12 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="Stage_11">
+    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_11">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_66">
@@ -1218,7 +1218,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="496,52" sap2010:WorkflowViewState.IdRef="Stage_9">
+    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="450,578" sap2010:WorkflowViewState.IdRef="Stage_9">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_61">
@@ -1275,21 +1275,21 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="496,52" sap2010:WorkflowViewState.IdRef="Stage_12">
+    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="Stage_12">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="452,450" sap2010:WorkflowViewState.IdRef="Sequence_69">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_69">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="410,362" sap2010:WorkflowViewState.IdRef="If_11">
+            <If sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_11">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_344">isLibrary</CSharpValue>
