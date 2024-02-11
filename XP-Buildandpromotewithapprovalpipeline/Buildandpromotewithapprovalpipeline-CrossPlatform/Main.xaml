@@ -672,7 +672,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_2">
+    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="602,1076" sap2010:WorkflowViewState.IdRef="Stage_2">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,991" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -704,7 +704,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <upa:Build ContinueOnError="{x:Null}" Author="[CommitterUsername]" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="Build_1" IncludeSources="False" PackagePath="[buildOutput]" ProjectPath="[ProjectPath]" RepositoryBranch="[RepositoryBranch]" RepositoryCommit="[CommitSha]" RepositoryPath="[repositoryPath]" RepositoryType="[RepositoryType]" RepositoryUrl="[projectRepositoryUrl]" SkipValidate="[SkipValidation]" Version="[packageVersion]" />
+            <upa:Build ContinueOnError="{x:Null}" Author="[CommitterUsername]" DisplayName="Build the package" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="Build_1" IncludeSources="True" PackagePath="[buildOutput]" ProjectPath="[ProjectPath]" RepositoryBranch="[RepositoryBranch]" RepositoryCommit="[CommitSha]" RepositoryPath="[repositoryPath]" RepositoryType="[RepositoryType]" RepositoryUrl="[projectRepositoryUrl]" SkipValidate="[SkipValidation]" Version="[packageVersion]" />
             <ui:LogMessage DisplayName="Log Built" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Built package: &quot; +packageName +&quot; version: &quot;+packageVersion]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
