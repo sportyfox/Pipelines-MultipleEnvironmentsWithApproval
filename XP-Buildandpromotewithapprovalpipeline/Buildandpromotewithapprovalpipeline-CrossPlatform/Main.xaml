@@ -31,7 +31,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>868,3941</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>868,6722</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="740,3876" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="740,6657" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
       <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
@@ -411,7 +411,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="678,81" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="678,2495" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="outputTypeFirstKey" />
         <Variable x:TypeArguments="x:String" Name="targetFrameworkKey" />
@@ -422,11 +422,11 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log commit id" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Project type: &quot; + projectType]">
+      <ui:LogMessage DisplayName="Log commit id" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Project type: &quot; + projectType]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -434,7 +434,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Assign DisplayName="Assign - targetFrameworkKey" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign DisplayName="Assign - targetFrameworkKey" sap:VirtualizedContainerService.HintSize="526,82" sap2010:WorkflowViewState.IdRef="Assign_13">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[targetFrameworkKey]</OutArgument>
         </Assign.To>
@@ -442,7 +442,7 @@
           <InArgument x:TypeArguments="x:String">targetFramework</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign - expressionLanguageKey" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign DisplayName="Assign - expressionLanguageKey" sap:VirtualizedContainerService.HintSize="526,82" sap2010:WorkflowViewState.IdRef="Assign_14">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[expressionLanguageKey]</OutArgument>
         </Assign.To>
@@ -450,7 +450,7 @@
           <InArgument x:TypeArguments="x:String">expressionLanguage</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetTargetFramework" sap:VirtualizedContainerService.HintSize="450,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetTargetFramework" sap:VirtualizedContainerService.HintSize="526,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ParameterKey">[targetFrameworkKey]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectPath">[projectFileAbsolutePath]</InArgument>
@@ -464,7 +464,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetExpressionLanguage" sap:VirtualizedContainerService.HintSize="450,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetExpressionLanguage" sap:VirtualizedContainerService.HintSize="526,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ParameterKey">[expressionLanguageKey]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectPath">[projectFileAbsolutePath]</InArgument>
@@ -478,7 +478,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:LogMessage DisplayName="Log project type" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Project type: &quot; + projectType]">
+      <ui:LogMessage DisplayName="Log project type" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Project type: &quot; + projectType]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -486,7 +486,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:LogMessage DisplayName="Log target framework" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Target framework: &quot; + targetFramework]">
+      <ui:LogMessage DisplayName="Log target framework" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Target framework: &quot; + targetFramework]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -494,7 +494,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:LogMessage DisplayName="Log expression language" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;Expression language: &quot; + expressionLanguage]">
+      <ui:LogMessage DisplayName="Log expression language" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;Expression language: &quot; + expressionLanguage]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -502,7 +502,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign sap:VirtualizedContainerService.HintSize="526,82" sap2010:WorkflowViewState.IdRef="Assign_15">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[automationHubIdeaUrlKey]</OutArgument>
         </Assign.To>
@@ -510,7 +510,7 @@
           <InArgument x:TypeArguments="x:String">automationHubIdeaUrl</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetExpressionLanguage" sap:VirtualizedContainerService.HintSize="450,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetExpressionLanguage" sap:VirtualizedContainerService.HintSize="526,274" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="GetProjectSetting.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ParameterKey">[automationHubIdeaUrlKey]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectPath">[projectFileAbsolutePath]</InArgument>
@@ -524,11 +524,33 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
+      <If Condition="[automationHubIdeaUrl IsNot Nothing]" sap:VirtualizedContainerService.HintSize="526,352" sap2010:WorkflowViewState.IdRef="If_12">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="492,170" sap2010:WorkflowViewState.IdRef="Sequence_38">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[automationHubIdeaUrl]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_39" />
+        </If.Else>
+      </If>
     </Sequence>
-    <Sequence DisplayName="Get the repository url for NuGet package" sap:VirtualizedContainerService.HintSize="678,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
+    <Sequence DisplayName="Get the repository url for NuGet package" sap:VirtualizedContainerService.HintSize="678,436" sap2010:WorkflowViewState.IdRef="Sequence_32">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -545,15 +567,15 @@
     <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_3">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap:VirtualizedContainerService.HintSize="644,1596" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[AnalyzePolicy IsNot Nothing]" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[AnalyzePolicy IsNot Nothing]" sap:VirtualizedContainerService.HintSize="602,1508" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="526,902" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence sap:VirtualizedContainerService.HintSize="568,1097" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="analysisResult" />
                   </Sequence.Variables>
@@ -562,36 +584,36 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log analyze" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Trace" Message="[&quot;Analyzing project: &quot; +ProjectPath + &quot; with policy &quot; + AnalyzePolicy.PolicyIdentifier]" />
-                  <upa:Analyze ContinueOnError="{x:Null}" AnalysisResult="[analysisResult]" AnalyzePolicy="[AnalyzePolicy]" sap:VirtualizedContainerService.HintSize="484,192" sap2010:WorkflowViewState.IdRef="Analyze_1" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" />
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[analysisResult]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="484,318" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:LogMessage DisplayName="Log analyze" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Trace" Message="[&quot;Analyzing project: &quot; +ProjectPath + &quot; with policy &quot; + AnalyzePolicy.PolicyIdentifier]" />
+                  <upa:Analyze ContinueOnError="{x:Null}" AnalysisResult="[analysisResult]" AnalyzePolicy="[AnalyzePolicy]" sap:VirtualizedContainerService.HintSize="526,192" sap2010:WorkflowViewState.IdRef="Analyze_1" ProjectPath="[ProjectPath]" RepositoryPath="[repositoryPath]" />
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[analysisResult]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="526,415" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="492,229" sap2010:WorkflowViewState.IdRef="Sequence_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log result" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[CurrentRow(0).ToString() + &quot; | &quot;  + CurrentRow(&quot;ErrorCode&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;RuleName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;WorkflowDisplayName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;ActivityDisplayName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;FilePath&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;ActivityIdRef&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;AnalyzerItemName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;AnalyzerItemType&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;Recommendation&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;DocumentationLink&quot;).ToString()]" />
+                          <ui:LogMessage DisplayName="Log result" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[CurrentRow(0).ToString() + &quot; | &quot;  + CurrentRow(&quot;ErrorCode&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;RuleName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;WorkflowDisplayName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;ActivityDisplayName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;FilePath&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;ActivityIdRef&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;AnalyzerItemName&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;AnalyzerItemType&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;Recommendation&quot;).ToString()+ &quot; | &quot;  + CurrentRow(&quot;DocumentationLink&quot;).ToString()]" />
                         </Sequence>
                       </ActivityAction>
                     </ui:ForEachRow.Body>
                   </ui:ForEachRow>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Analyzed project: &quot; +ProjectPath]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Analyzed project: &quot; +ProjectPath]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence sap:VirtualizedContainerService.HintSize="492,229" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Trace" Message="[&quot;No policy provided. Skipping workflow analysis&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Trace" Message="[&quot;No policy provided. Skipping workflow analysis&quot;]" />
                 </Sequence>
               </If.Else>
             </If>
@@ -726,15 +748,15 @@
     <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_5">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence sap:VirtualizedContainerService.HintSize="492,591" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Publishing to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Publishing package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
-            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to the first destination" FolderName="[FirstOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="PublishPackage_1" OrchestratorUrl="[FirstOrchestratorUrl]" PackagePath="[buildOutput]" TimeoutMS="60000" />
-            <ui:LogMessage DisplayName="Log Published to first destination" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Published package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
+            <ui:LogMessage DisplayName="Log Publishing to first destination" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Publishing package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
+            <upa:PublishPackage ContinueOnError="{x:Null}" DisplayName="Publish to the first destination" FolderName="[FirstOrchestratorFolder]" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="PublishPackage_1" OrchestratorUrl="[FirstOrchestratorUrl]" PackagePath="[buildOutput]" TimeoutMS="60000" />
+            <ui:LogMessage DisplayName="Log Published to first destination" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Published package &quot; +buildOutput + &quot; to &quot;+ FirstOrchestratorUrl + &quot; folder: &quot; + FirstOrchestratorFolder]" />
           </Sequence>
         </ActivityAction>
       </upa:Stage.Activities>
@@ -801,10 +823,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="678,2482" sap2010:WorkflowViewState.IdRef="Stage_7">
+    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="678,2491" sap2010:WorkflowViewState.IdRef="Stage_7">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="644,2397" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence sap:VirtualizedContainerService.HintSize="644,2406" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="approvalTaskTitle" />
               <Variable x:TypeArguments="scg:List(upat:TaskAssignmentResponse)" Name="failedAssignmentList" />
@@ -856,7 +878,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" BulkFormLayout="{x:Null}" DynamicFormPath="{x:Null}" ExternalTag="{x:Null}" Labels="{x:Null}" TaskCatalog="{x:Null}" TimeoutMs="{x:Null}" BulkFormLayoutGuid="04b5c616-665d-48cd-8472-6c7e108d04cd" DisplayName="Create Form Task" EnableBulkEdit="False" EnableDynamicForms="False" EnableV2="False" FormLayout="%[{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt;Details&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;input&quot;:false,&quot;key&quot;:&quot;columns&quot;,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Process name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProcessName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Package name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_PackageName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Version&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_Version&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;CommitSha&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitSha&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Committer username&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitterUsername&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;RepositoryUrl&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProjectRepositoryUrl&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Automation Hub Idea&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html2&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_AutomationHubIdeaUrl}}\&quot;&gt;{{data.in_AutomationHubIdeaUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html4&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Orchestrator&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html3&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_OrchestratorUrl}}\&quot;&gt;{{data.in_OrchestratorUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html5&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Orchestrator folder&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_OrchestratorFolder&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt; Please follow this checklist:&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review architecture&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkbox&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review code&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;checkbox1&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Perform manual tests&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;performManualTests&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6}]},{&quot;label&quot;:&quot;Do you Approve it?&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_qaApproval&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false},{&quot;label&quot;:&quot;Additional feedback&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_reason&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:true},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false}]" FormLayoutGuid="8f29e126-11c1-4696-bc72-b05865516839" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="602,325" sap2010:WorkflowViewState.IdRef="CreateFormTask_2" TaskOutput="[approvalTask]" TaskPriority="[TaskPriority.Medium]" TaskTitle="[approvalTaskTitle]">
+            <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" BulkFormLayout="{x:Null}" DynamicFormPath="{x:Null}" ExternalTag="{x:Null}" Labels="{x:Null}" TaskCatalog="{x:Null}" TimeoutMs="{x:Null}" BulkFormLayoutGuid="11db5eec-796a-430e-9fa3-e636554cb940" DisplayName="Create Form Task" EnableBulkEdit="False" EnableDynamicForms="False" EnableV2="False" FormLayout="%[{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt;Details&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;input&quot;:false,&quot;key&quot;:&quot;columns&quot;,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Process name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProcessName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Package name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_PackageName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Version&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_Version&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;CommitSha&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitSha&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Committer username&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitterUsername&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;RepositoryUrl&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProjectRepositoryUrl&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Automation Hub Idea&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html2&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_AutomationHubIdeaUrl}}\&quot;&gt;{{data.in_AutomationHubIdeaUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html4&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Orchestrator&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html3&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_OrchestratorUrl}}\&quot;&gt;{{data.in_OrchestratorUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html5&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Orchestrator folder&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_OrchestratorFolder&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt; Please follow this checklist:&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review architecture&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkbox&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review code&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;checkbox1&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Perform manual tests&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;performManualTests&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6}]},{&quot;label&quot;:&quot;Do you Approve it?&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_qaApproval&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false},{&quot;label&quot;:&quot;Additional feedback&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_reason&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:true},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false}]" FormLayoutGuid="5c050335-a701-45fb-aa2d-a4a098694c81" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="602,325" sap2010:WorkflowViewState.IdRef="CreateFormTask_2" TaskOutput="[approvalTask]" TaskPriority="[TaskPriority.Medium]" TaskTitle="[approvalTaskTitle]">
               <upaf:CreateFormTask.FormData>
                 <OutArgument x:TypeArguments="x:Boolean" x:Key="out_qaApproval">[isApproved]</OutArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_reason">[approvalReason]</OutArgument>
@@ -871,7 +893,7 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_ProjectRepositoryUrl">[projectRepositoryUrl]</InArgument>
               </upaf:CreateFormTask.FormData>
             </upaf:CreateFormTask>
-            <Assign sap:VirtualizedContainerService.HintSize="602,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign sap:VirtualizedContainerService.HintSize="602,83" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(upat:TaskUserAssignment)">[approvalTaskAssignmentList]</OutArgument>
               </Assign.To>
@@ -879,7 +901,7 @@
                 <InArgument x:TypeArguments="scg:List(upat:TaskUserAssignment)">[new List(Of TaskUserAssignment) From{ New TaskUserAssignment With { .TaskId = approvalTask.Id, .UserNameOrEmail = Approver}}]</InArgument>
               </Assign.Value>
             </Assign>
-            <upat:AssignTasks TaskUserAssignments="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Assign Approval Task" EnableMultipleAssignments="False" FailedTaskAssignments="[failedAssignmentList]" FolderPath="Match invoices" sap:VirtualizedContainerService.HintSize="602,289" sap2010:WorkflowViewState.IdRef="AssignTasks_1" MigrateV144="True" TaskAssignmentType="[TaskAssignmentType.Assign]" TaskId="[approvalTask.Id.Value]" UserNameOrEmail="[Approver]">
+            <upat:AssignTasks TaskUserAssignments="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Assign Approval Task" EnableMultipleAssignments="False" FailedTaskAssignments="[failedAssignmentList]" FolderPath="Match invoices" sap:VirtualizedContainerService.HintSize="602,294" sap2010:WorkflowViewState.IdRef="AssignTasks_1" MigrateV144="True" TaskAssignmentType="[TaskAssignmentType.Assign]" TaskId="[approvalTask.Id.Value]" UserNameOrEmail="[Approver]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -887,15 +909,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </upat:AssignTasks>
-            <If Condition="[failedAssignmentList.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="602,866" sap2010:WorkflowViewState.IdRef="If_9">
+            <If Condition="[failedAssignmentList.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="602,869" sap2010:WorkflowViewState.IdRef="If_9">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="568,684" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                <Sequence sap:VirtualizedContainerService.HintSize="568,686" sap2010:WorkflowViewState.IdRef="Sequence_33">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,141" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;Automatic task assignment failed&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,143" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;Automatic task assignment failed&quot;]" />
                   <ui:ForEach x:TypeArguments="upat:TaskAssignmentResponse" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="526,415" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[failedAssignmentList]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="upat:TaskAssignmentResponse">
@@ -963,7 +985,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_8">
+    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="678,53" sap2010:WorkflowViewState.IdRef="Stage_8">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -985,7 +1007,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_9">
+    <upa:Stage DisplayName="Publish package to second destination" sap:VirtualizedContainerService.HintSize="678,53" sap2010:WorkflowViewState.IdRef="Stage_9">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,743" sap2010:WorkflowViewState.IdRef="Sequence_13">
@@ -1049,7 +1071,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_10">
+    <upa:Stage DisplayName="Update process on second destination" sap:VirtualizedContainerService.HintSize="678,53" sap2010:WorkflowViewState.IdRef="Stage_10">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,270" sap2010:WorkflowViewState.IdRef="Sequence_14">
