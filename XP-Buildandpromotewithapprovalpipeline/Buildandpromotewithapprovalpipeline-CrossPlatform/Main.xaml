@@ -31,7 +31,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>868,6722</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>868,6802</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="740,6657" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="740,6737" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
       <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
@@ -411,7 +411,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="678,2495" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="678,2575" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="outputTypeFirstKey" />
         <Variable x:TypeArguments="x:String" Name="targetFrameworkKey" />
@@ -524,7 +524,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <If Condition="[automationHubIdeaUrl IsNot Nothing]" sap:VirtualizedContainerService.HintSize="526,352" sap2010:WorkflowViewState.IdRef="If_12">
+      <If Condition="[automationHubIdeaUrl Is Nothing]" sap:VirtualizedContainerService.HintSize="526,432" sap2010:WorkflowViewState.IdRef="If_12">
         <If.Then>
           <Sequence sap:VirtualizedContainerService.HintSize="492,170" sap2010:WorkflowViewState.IdRef="Sequence_38">
             <sap:WorkflowViewStateService.ViewState>
@@ -543,7 +543,13 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_39" />
+          <Sequence sap:VirtualizedContainerService.HintSize="416,80" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
         </If.Else>
       </If>
     </Sequence>
