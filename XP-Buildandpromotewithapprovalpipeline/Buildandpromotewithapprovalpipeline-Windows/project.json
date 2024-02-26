@@ -1,25 +1,26 @@
 {
-  "name": "MultipleEnvironmentsWithApprovalPipelineForLibraries",
-  "description": "Multiple environments with approval pipeline for libraries",
+  "name": "Buildandpromotewithapprovalpipeline-CrossPlatform",
+  "projectId": "9df3dce2-2984-478e-b5c9-a5821171ed7f",
+  "description": "Clone - Analyze - Run Tests - Build - Publish package - Update process - Approve - Download package - Upload package - Update process.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.FormActivityLibrary": "[2.0.2]",
-    "UiPath.Persistence.Activities": "[1.4.1]",
-    "UiPath.Pipelines.Activities": "[1.0.4-alpha.3739210]",
-    "UiPath.System.Activities": "[22.10.0]",
-    "UiPath.WebAPI.Activities": "[1.11.1]"
+    "UiPath.FormActivityLibrary": "[2.0.7]",
+    "UiPath.Persistence.Activities": "[1.4.4]",
+    "UiPath.Pipelines.Activities": "[1.0.6-preview]",
+    "UiPath.System.Activities": "[23.4.2]",
+    "UiPath.WebAPI.Activities": "[1.16.2]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "22.10.0.0",
-  "projectVersion": "1.0.53",
+  "studioVersion": "23.10.0.0",
+  "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
-    "requiresUserInteraction": false,
+    "requiresUserInteraction": true,
     "supportsPersistence": true,
     "workflowSerialization": "DataContract",
     "excludedLoggedData": [
@@ -43,13 +44,14 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
-  "expressionLanguage": "CSharp",
+  "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "ecd91ba6-14b5-4514-9e0f-cdd64e6b76f8",
+      "uniqueId": "917be5c5-cd90-47d7-841b-3692da27ddba",
       "input": [],
       "output": []
     }
@@ -57,6 +59,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Windows",
-  "automationHubIdeaUrl": ""
+  "targetFramework": "Portable"
 }
