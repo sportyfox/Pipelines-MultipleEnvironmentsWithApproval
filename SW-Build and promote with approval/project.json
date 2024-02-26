@@ -1,5 +1,5 @@
 {
-  "name": "XP-Build.and.promote.with.approval",
+  "name": "Build.and.promote.with.approval",
   "projectId": "9df3dce2-2984-478e-b5c9-a5821171ed7f",
   "description": "Clone - Analyze - Run Tests - Build - Publish package - Update process - Approve - Download package - Upload package - Update process.",
   "main": "Main.xaml",
