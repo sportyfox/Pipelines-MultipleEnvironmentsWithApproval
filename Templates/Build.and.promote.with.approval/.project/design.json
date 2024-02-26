@@ -1,0 +1,9 @@
+{
+  "Tags": [
+    {
+      "Key": "AutomationOpsPipelines"
+    }
+  ],
+  "SeparateRuntimeDependencies": true,
+  "IncludeSources": true
+}
