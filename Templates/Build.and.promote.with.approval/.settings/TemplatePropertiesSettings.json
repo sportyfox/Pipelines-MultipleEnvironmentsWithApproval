@@ -1,1 +1,1 @@
-{"Workflows":[{"FilePath":"Main.xaml","Activities":[]}]}
+{"Workflows":[{"FilePath":"Main.xaml","Activities":[]},{"FilePath":"ComputerRepositoryUrl.xaml","Activities":null},{"FilePath":"GetProjectSetting.xaml","Activities":null},{"FilePath":"TestCase_Azure.xaml","Activities":null},{"FilePath":"TestCase_GitHub.xaml","Activities":null}]}
