@@ -1,5 +1,5 @@
 {
-  "name": "Build.and.promote.with.approval",
+  "name": "Build and promote with approval pipeline",
   "projectId": "20099dea-7d06-4e35-9094-2e164ad429b6",
   "description": "Clone - Analyze - Run Tests - Build - Publish package - Update process - Approve - Download package - Upload package - Update process.\r\n\r\nTo skip running tests, set SkipTesting to True. If it is a library, the update process part will be skipped.\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
