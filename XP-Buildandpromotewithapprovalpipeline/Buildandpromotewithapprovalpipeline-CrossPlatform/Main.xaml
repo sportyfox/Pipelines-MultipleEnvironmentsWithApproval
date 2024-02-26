@@ -31,7 +31,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1366,1528</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2006,5331</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,1463" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="740,5266" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="repositoryPath" />
       <Variable x:TypeArguments="x:String" Name="projectFileAbsolutePath" />
@@ -164,7 +164,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Log input arguments" sap:VirtualizedContainerService.HintSize="678,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -212,7 +212,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_1">
+    <upa:Stage DisplayName="Clone" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_1">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="492,451" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -241,7 +241,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_11">
+    <upa:Stage DisplayName="Get expected package name and version" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_11">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,2451" sap2010:WorkflowViewState.IdRef="Sequence_28">
@@ -411,7 +411,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_31">
+    <Sequence DisplayName="Log project information" sap:VirtualizedContainerService.HintSize="678,81" sap2010:WorkflowViewState.IdRef="Sequence_31">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="outputTypeFirstKey" />
         <Variable x:TypeArguments="x:String" Name="targetFrameworkKey" />
@@ -553,24 +553,24 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Get the repository url for NuGet package" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_32">
+    <Sequence DisplayName="Get the repository url for NuGet package" sap:VirtualizedContainerService.HintSize="678,436" sap2010:WorkflowViewState.IdRef="Sequence_32">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,331" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ComputerRepositoryUrl.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,325" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ComputerRepositoryUrl.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_RepositoryUrl">[RepositoryUrl]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_RepositoryBranch">[RepositoryBranch]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectPath">[ProjectPath]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_RepositoryType">[RepositoryType]</InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_ProjectRepositoryUrl">[ProjectRepositoryUrl]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ProjectRepositoryUrl">[projectRepositoryUrl]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_3">
+    <upa:Stage DisplayName="Analyze" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_3">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="644,1596" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -633,7 +633,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_4">
+    <upa:Stage DisplayName="Run tests" sap:VirtualizedContainerService.HintSize="678,52" sap2010:WorkflowViewState.IdRef="Stage_4">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,1014" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -700,7 +700,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_2">
+    <upa:Stage DisplayName="Build" sap:VirtualizedContainerService.HintSize="678,1076" sap2010:WorkflowViewState.IdRef="Stage_2">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,991" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -746,12 +746,12 @@
       </upa:Stage.Activities>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_5">
+    <upa:Stage DisplayName="Publish package to first destination" sap:VirtualizedContainerService.HintSize="602,52" sap2010:WorkflowViewState.IdRef="Stage_5">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="492,591" sap2010:WorkflowViewState.IdRef="Sequence_8">
@@ -773,7 +773,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_6">
+    <upa:Stage DisplayName="Update process on first destination" sap:VirtualizedContainerService.HintSize="602,52" sap2010:WorkflowViewState.IdRef="Stage_6">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="568,1151" sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -829,10 +829,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_7">
+    <upa:Stage DisplayName="Approval" sap:VirtualizedContainerService.HintSize="678,2491" sap2010:WorkflowViewState.IdRef="Stage_7">
       <upa:Stage.Activities>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="644,2413" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence sap:VirtualizedContainerService.HintSize="644,2406" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="approvalTaskTitle" />
               <Variable x:TypeArguments="scg:List(upat:TaskAssignmentResponse)" Name="failedAssignmentList" />
@@ -842,7 +842,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[isLibrary]" DisplayName="Create action task title" sap:VirtualizedContainerService.HintSize="602,53" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[isLibrary]" DisplayName="Create action task title" sap:VirtualizedContainerService.HintSize="602,52" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -884,7 +884,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" BulkFormLayout="{x:Null}" DynamicFormPath="{x:Null}" ExternalTag="{x:Null}" Labels="{x:Null}" TaskCatalog="{x:Null}" TimeoutMs="{x:Null}" BulkFormLayoutGuid="56587b19-eef0-4bc4-8991-0cee2edc10bd" DisplayName="Create Form Task" EnableBulkEdit="False" EnableDynamicForms="False" EnableV2="False" FormLayout="%[{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt;Details&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;input&quot;:false,&quot;key&quot;:&quot;columns&quot;,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Process name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProcessName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Package name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_PackageName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Version&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_Version&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;CommitSha&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitSha&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Committer username&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitterUsername&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;RepositoryUrl&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProjectRepositoryUrl&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Automation Hub Idea&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html2&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_AutomationHubIdeaUrl}}\&quot;&gt;{{data.in_AutomationHubIdeaUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html4&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Orchestrator&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html3&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_OrchestratorUrl}}\&quot;&gt;{{data.in_OrchestratorUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html5&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Orchestrator folder&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_OrchestratorFolder&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt; Please follow this checklist:&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review architecture&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkbox&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review code&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;checkbox1&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Perform manual tests&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;performManualTests&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6}]},{&quot;label&quot;:&quot;Do you Approve it?&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_qaApproval&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false},{&quot;label&quot;:&quot;Additional feedback&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_reason&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:true},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false}]" FormLayoutGuid="788c650d-ef01-4c70-a180-2e49208e570b" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="602,331" sap2010:WorkflowViewState.IdRef="CreateFormTask_2" TaskOutput="[approvalTask]" TaskPriority="[TaskPriority.Medium]" TaskTitle="[approvalTaskTitle]">
+            <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" BulkFormLayout="{x:Null}" DynamicFormPath="{x:Null}" ExternalTag="{x:Null}" Labels="{x:Null}" TaskCatalog="{x:Null}" TimeoutMs="{x:Null}" BulkFormLayoutGuid="355f9768-b318-4ffe-8b30-bce84ca46d7e" DisplayName="Create Form Task" EnableBulkEdit="False" EnableDynamicForms="False" EnableV2="False" FormLayout="%[{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt;Details&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false},{&quot;input&quot;:false,&quot;key&quot;:&quot;columns&quot;,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Columns&quot;,&quot;type&quot;:&quot;columns&quot;,&quot;columns&quot;:[{&quot;components&quot;:[{&quot;label&quot;:&quot;Process name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProcessName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Package name&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_PackageName&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Version&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_Version&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;CommitSha&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitSha&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Committer username&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_CommitterUsername&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;RepositoryUrl&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_ProjectRepositoryUrl&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6},{&quot;components&quot;:[{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Automation Hub Idea&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html2&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_AutomationHubIdeaUrl}}\&quot;&gt;{{data.in_AutomationHubIdeaUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html4&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;tag&quot;:&quot;span&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;Orchestrator&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html3&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Automation Hub Idea&quot;,&quot;tag&quot;:&quot;a&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;a href=\&quot;{{data.in_OrchestratorUrl}}\&quot;&gt;{{data.in_OrchestratorUrl}}&lt;/a&gt;&quot;,&quot;refreshOnChange&quot;:true,&quot;key&quot;:&quot;in_AutomationHubIdeaUrl1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot; &quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html5&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Orchestrator folder&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;in_OrchestratorFolder&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;HTML&quot;,&quot;attrs&quot;:[{&quot;attr&quot;:&quot;&quot;,&quot;value&quot;:&quot;&quot;}],&quot;content&quot;:&quot;&lt;span&gt; Please follow this checklist:&lt;/span&gt;&quot;,&quot;refreshOnChange&quot;:false,&quot;key&quot;:&quot;html1&quot;,&quot;type&quot;:&quot;htmlelement&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review architecture&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkbox&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Review code&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;checkbox1&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false},{&quot;label&quot;:&quot;Perform manual tests&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;performManualTests&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false,&quot;hideOnChildrenHidden&quot;:false}],&quot;width&quot;:6,&quot;offset&quot;:0,&quot;push&quot;:0,&quot;pull&quot;:0,&quot;size&quot;:&quot;md&quot;,&quot;currentWidth&quot;:6}]},{&quot;label&quot;:&quot;Do you Approve it?&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_qaApproval&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true,&quot;defaultValue&quot;:false},{&quot;label&quot;:&quot;Additional feedback&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;out_reason&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;tableView&quot;:true},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false},{&quot;mask&quot;:false,&quot;customClass&quot;:&quot;uipath-button-container&quot;,&quot;tableView&quot;:true,&quot;alwaysEnabled&quot;:false,&quot;type&quot;:&quot;table&quot;,&quot;input&quot;:false,&quot;key&quot;:&quot;key&quot;,&quot;label&quot;:&quot;label&quot;,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]},{&quot;components&quot;:[]}]],&quot;numRows&quot;:1,&quot;numCols&quot;:6,&quot;reorder&quot;:false}]" FormLayoutGuid="acc5faa6-9a99-483b-9fa3-f1868ee6c86e" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="602,325" sap2010:WorkflowViewState.IdRef="CreateFormTask_2" TaskOutput="[approvalTask]" TaskPriority="[TaskPriority.Medium]" TaskTitle="[approvalTaskTitle]">
               <upaf:CreateFormTask.FormData>
                 <OutArgument x:TypeArguments="x:Boolean" x:Key="out_qaApproval">[isApproved]</OutArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_reason">[approvalReason]</OutArgument>
@@ -991,7 +991,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </upa:Stage>
-    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="Stage_8">
+    <upa:Stage DisplayName="Download package from first destination" sap:VirtualizedContainerService.HintSize="602,52" sap2010:WorkflowViewState.IdRef="Stage_8">
       <upa:Stage.Activities>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="376,493" sap2010:WorkflowViewState.IdRef="Sequence_12">

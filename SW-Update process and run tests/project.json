@@ -1,9 +1,10 @@
 {
   "name": "Update with tests",
+  "projectId": "795a1465-9783-4fde-b576-a1012eda5e5e",
   "description": "Clone - Analyze - Run Tests - Build - Publish package - Update process\r\nTo skip running tests, set SkipTesting to True. If it is a library, the update process part will be skipped.\r\nRead more in Automation Ops - Pipelines. documention.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Pipelines.Activities": "1.0.6-preview",
+    "UiPath.Pipelines.Activities": "1.0.7-alpha.5179714",
     "UiPath.System.Activities": "23.4.2",
     "UiPath.WebAPI.Activities": "1.13.2"
   },
@@ -41,7 +42,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
